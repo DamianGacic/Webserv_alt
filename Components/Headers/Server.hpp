@@ -9,7 +9,7 @@
 class Server : public Config
 {
 	private:
-		static int                      servers_num; //single attributes
+		static int                      num_servers; //single attributes
 		bool                            _active;
 		std::string                     _server_name;
 		std::string                     _ip;
