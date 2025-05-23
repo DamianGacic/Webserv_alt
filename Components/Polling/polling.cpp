@@ -19,14 +19,15 @@
 void polling(std::vector<Server> servers_vector)
 {
     std::map<int, Server> servers;
-    std::map<int, Client> clients;    std::vector<Server>::const_iterator sit;
-    for (sit = servers_vector.begin(); sit != servers_vector.end(); ++sit)
+    std::map<int, Client> clients;
+    std::vector<Server>::const_iterator serv_it;
+    for (serv_it = servers_vector.begin(); serv_it != servers_vector.end(); ++serv_it)
     {
-        std::vector<int> sockets = sit->get_sockets();
+        std::vector<int> sockets = serv_it->get_sockets();
         std::vector<int>::const_iterator sock_it;
         for (sock_it = sockets.begin(); sock_it != sockets.end(); ++sock_it)
         {
-            servers[*sock_it] = *sit;
+            servers[*sock_it] = *serv_it;
         }
     }
     int epoll_fd = epoll_create1(0);

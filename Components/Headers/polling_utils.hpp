@@ -1,4 +1,6 @@
 #pragma once
+
+#include "Client.hpp"
 #include "Server.hpp"
 #include <iostream>
 #include <vector>
